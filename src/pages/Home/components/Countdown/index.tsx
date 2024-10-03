@@ -6,9 +6,14 @@ import { CyclesContext } from "../..";
 
 export function Countdown(){
   // Variável
-  const { activeCycle, activeCycleId, markCurrentCycleAsFineshed } =
-    useContext(CyclesContext)
-  const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
+  const {
+    activeCycle,
+    activeCycleId,
+    markCurrentCycleAsFineshed,
+    amountSecondsPassed,
+    setSecondsPassed,
+  } = useContext(CyclesContext)
+
   const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0
 
     useEffect(() => {
@@ -20,18 +25,18 @@ export function Countdown(){
             activeCycle.startDate
           )
           if (secondsDifference >= totalSeconds) {
-           markCurrentCycleAsFineshed()
-            setAmountSecondsPassed(totalSeconds)
+            markCurrentCycleAsFineshed()
+            setSecondsPassed(totalSeconds)
             clearInterval(interval)
           } else {
-            setAmountSecondsPassed(secondsDifference)
+            setSecondsPassed(secondsDifference)
           }
         }, 1000)
       }
       return () => {
         clearInterval(interval)
       }
-    }, [activeCycle, totalSeconds, activeCycleId, ])
+    }, [activeCycle, totalSeconds, activeCycleId, setSecondsPassed])
 
      const currentSeconds = activeCycle ? totalSeconds - amountSecondsPassed : 0
 
