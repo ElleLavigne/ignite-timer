@@ -1,5 +1,5 @@
 // Importações
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, } from "react";
 import { CountdownConatiner, Separator } from "./styles";
 import { differenceInSeconds } from "date-fns";
 import { CyclesContext } from "../..";

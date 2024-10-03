@@ -1,6 +1,6 @@
 // Importações.
 import { HandPalm, Play } from "phosphor-react"
-import { createContext, useEffect, useState } from "react"
+import { createContext, useState } from "react"
 import {
   HomeContainer,
   StartCountdownButton,
