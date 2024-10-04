@@ -2,10 +2,9 @@
 import { useContext, useEffect, } from "react";
 import { CountdownConatiner, Separator } from "./styles";
 import { differenceInSeconds } from "date-fns";
-import { CyclesContext } from "../..";
+import { CyclesContext } from "../../../../contexts/CyclesContext";
 
 export function Countdown(){
-  // Variável
   const {
     activeCycle,
     activeCycleId,
